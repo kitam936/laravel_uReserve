@@ -55,13 +55,21 @@ class EventController extends Controller
 
     public function show(Event $event)
     {
-        //
+        // dd($event);
+        $event = Event::findOrFail($event->id);
+        $eventDate = $event->eventDate;
+        $startTime = $event->startTime;
+        $endTime = $event->endTime;
+        // dd( $event,$eventDate,$startTime,$endTime);
+
+        return view('manager.events.show',compact('event','eventDate','startTime','endTime'));
     }
 
 
     public function edit(Event $event)
     {
-        //
+        $event = Event::findOrFail($event->id);
+        return view('manager.events.edit',compact('event'));
     }
 
 
