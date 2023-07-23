@@ -19,6 +19,9 @@
                     <x-nav-link href="{{ route('events.index') }}" :active="request()->routeIs('events.index')">
                         イベント管理
                     </x-nav-link>
+                    <x-nav-link href="{{ route('events.past') }}" :active="request()->routeIs('events.past')">
+                        過去イベント
+                    </x-nav-link>
                     @endcan
                 </div>
             </div>

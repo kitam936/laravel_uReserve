@@ -59,12 +59,20 @@
                            非表示
                            @endif
                         </div>
+                        @if($event->eventDate>=\Carbon\Carbon::today()->format('Y年m月d日'))
                         <x-button class="ml-4">
                             編集する
                         </x-button>
+                        @endif
                     </div>
 
                 </form>
+                @can('manager-higher')
+                    <div class="md:flex w-20  mt-6 text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded ">
+                        <button onclick="location.href='{{ route('events.index') }}'" >Index</button>
+
+                    </div>
+                @endcan
                 </div>
 
 

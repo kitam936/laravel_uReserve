@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            イベント管理
+            過去イベント
         </h2>
     </x-slot>
 
@@ -17,11 +17,8 @@
                             {{ session('status') }}
                         </div>
                         @endif
-                        <div class="flex justify-between">
-
-                        <button onclick="location.href='{{ route('events.create') }}'" class="flex ml-auto mb-4 text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">新規登録</button>
-                        </div>
-                        <div class="lg:w-2/3 w-full mx-auto overflow-auto">
+                        {{-- <button onclick="location.href='{{ route('events.edit') }}'" class="flex ml-auto mb-4 text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">新規登録</button> --}}
+                      <div class="lg:w-2/3 w-full mx-auto overflow-auto">
                         <table class="table-auto w-full text-left whitespace-no-wrap">
                           <thead>
                             <tr>
