@@ -66,16 +66,21 @@
 
                         </div>
                     </div>
-                        <div class="w-20  ml-auto mt-6 text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded ">
-                            <button onclick="location.href='{{ route('events.destroy',['event'=>$event->id]) }}'" >deleet</button>
-                            @method('delete')
-                        </div>
-
-
-
-
-
                 </form>
+
+                <form class="w-20  ml-auto mt-6 text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded " method="POST" action="{{ route('events.destroy',['event'=>$event->id]) }}">
+                    @csrf
+                    @method('delete')
+                    <button onclick="location.href='{{ route('events.destroy',['event'=>$event->id]) }}'" >deleet</button>
+
+                </div>
+                </form>
+
+
+
+
+
+
                 </div>
 
 
