@@ -35,7 +35,13 @@ class ReservationController extends Controller
             $reservedPeople2=0;
         }
 
-        return view('event-detail',compact('event','reservablePeople','reservedPeople2'));
+        $isReserved = Reservation::where('user_id', '=', Auth::id())
+        ->where('event_id', '=', $id)
+        ->where('canceled_date', '=', null)
+        ->latest()
+        ->first();
+
+        return view('event-detail',compact('event','reservablePeople','reservedPeople2','isReserved'));
     }
 
     public function reserve(Request $request)
